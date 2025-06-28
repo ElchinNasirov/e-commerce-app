@@ -8,6 +8,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ShopCategory from './pages/ShopCategory';
 import Product from './pages/Product';
 import Cart from './pages/Cart';
+import Footer from './components/footer/Footer';
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
           <Route path='cart' element={<Cart />} />
           <Route path='/signup' element={<LoginSignup />} />
         </Routes>
+        <Footer />
       </BrowserRouter>
     </div>
   );
