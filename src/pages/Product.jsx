@@ -1,6 +1,8 @@
 import React, { useContext } from "react";
 import { useParams } from "react-router-dom";
+import DescriptionBox from "../components/descriptionBox/DescriptionBox";
 import ProductDisplay from "../components/productDisplay/ProductDisplay";
+import RelatedProducts from "../components/relatedProducts/RelatedProducts";
 import SelectedItem from "../components/selectedItem/SelectedItem";
 import { ShopContext } from "../context/ShopContext";
 
@@ -13,6 +15,8 @@ const Product = () => {
     <div>
       <SelectedItem product={product} />
       <ProductDisplay product={product} />
+      <DescriptionBox />
+      <RelatedProducts />
     </div>
   );
 };

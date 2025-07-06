@@ -1,12 +1,14 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import "./Navbar.css";
 import logo from "../assets/logo.png";
 import cart_icon from "../assets/cart_icon.png";
 import { Link } from "react-router-dom";
+import { ShopContext } from "../../context/ShopContext";
 
 const Navbar = () => {
   // using useState hook to add 'hr' tag to menu items once clicked
   const [menu, setMenu] = useState("shop");
+  const { getTotalCartItems } = useContext(ShopContext);
 
   return (
     <div className="navbar">
@@ -67,7 +69,7 @@ const Navbar = () => {
           <img src={cart_icon} alt="" />
         </Link>
 
-        <div className="nav-cart-count">0</div>
+        <div className="nav-cart-count">{getTotalCartItems()}</div>
       </div>
     </div>
   );
